@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO -->
+  <title>Pahrump Realtor | Residential & Investment Real Estate Guidance</title>
+  <meta name="description" content="Discover a trusted, results-driven Pahrump Realtor in Pahrump, Nevada for buyers and sellers. Call 206-919-6886 to call or visit." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#111a2d;
+      --card:#0f1930;
+      --text:#e9eefc;
+      --muted:#b7c2e6;
+      --line:rgba(255,255,255,.10);
+      --accent:#7dd3fc;
+      --accent2:#a78bfa;
+      --btn:#1f2c4f;
+      --btnHover:#263661;
+      --shadow: 0 12px 30px rgba(0,0,0,.25);
+      --radius: 18px;
+      --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(125,211,252,.20), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(167,139,250,.20), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 20px; }
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(11,18,32,.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar{
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .topbar .wrap{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 20px;
+    }
+    .topbar strong{ color: var(--text); font-weight:600; }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .brand .name{ font-weight:700; letter-spacing:.2px; }
+    .brand .tag{ font-size:13px; color:var(--muted); }
+
+    nav ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    nav a{
+      font-size:14px;
+      color:var(--muted);
+      padding:10px 10px;
+      border-radius:12px;
+    }
+    nav a:hover{ background: rgba(255,255,255,.06); color:var(--text); }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      border: 1px solid var(--line);
+      background: var(--btn);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-weight:600;
+      font-size:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      box-shadow: none;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease;
+    }
+    .btn:hover{ background: var(--btnHover); transform: translateY(-1px); }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(125,211,252,.22), rgba(167,139,250,.18));
+      border-color: rgba(125,211,252,.35);
+    }
+    .btn.primary:hover{ border-color: rgba(167,139,250,.45); }
+    .pill{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      background: rgba(255,255,255,.04);
+    }
+
+    /* Sections */
+    section{ padding: 56px 0; }
+    .panel{
+      background: rgba(17,26,45,.55);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .grid{
+      display:grid;
+      gap:18px;
+    }
+    .grid.two{
+      grid-template-columns: 1.2fr .8fr;
+    }
+    @media (max-width: 900px){
+      .grid.two{ grid-template-columns: 1fr; }
+      nav ul{ display:none; }
+    }
+
+    .hero{
+      padding: 34px 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(1000px 500px at 20% 0%, rgba(125,211,252,.20), transparent 55%),
+        radial-gradient(900px 450px at 90% 10%, rgba(167,139,250,.18), transparent 55%),
+        rgba(17,26,45,.55);
+      box-shadow: var(--shadow);
+    }
+    .hero h1{
+      margin: 0 0 10px 0;
+      font-size: clamp(26px, 3.2vw, 42px);
+      line-height:1.12;
+      letter-spacing: .2px;
+    }
+    .hero p{
+      margin:0 0 18px 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 70ch;
+    }
+    .hero .ctaRow{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .mini{
+      color: var(--muted);
+      font-size:13px;
+      margin-top:12px;
+    }
+
+    .card{
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(15,25,48,.65);
+    }
+    h2{
+      margin:0 0 10px 0;
+      font-size: 22px;
+      letter-spacing:.2px;
+    }
+    h3{
+      margin:0 0 8px 0;
+      font-size: 16px;
+      letter-spacing:.2px;
+    }
+    p{ margin:0 0 14px 0; color: var(--muted); }
+    .quote{
+      padding: 14px 16px;
+      border-left: 3px solid rgba(125,211,252,.55);
+      background: rgba(255,255,255,.04);
+      border-radius: 12px;
+      color: var(--text);
+      font-weight: 600;
+      margin: 10px 0 14px 0;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .services{ grid-template-columns: 1fr; }
+    }
+    .serviceCard{
+      padding:18px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height: 160px;
+    }
+    .serviceCard .meta{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .serviceCard .meta .badge{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(125,211,252,.25);
+      color: rgba(125,211,252,.95);
+      background: rgba(125,211,252,.08);
+    }
+    .serviceCard p{ margin:0; }
+    .serviceCard .linkRow{ margin-top:auto; }
+    .link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color: var(--text);
+      font-weight: 700;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+    .link:hover{ background: rgba(255,255,255,.07); }
+
+    .ctaBanner{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      justify-content:space-between;
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(125,211,252,.20);
+      background:
+        linear-gradient(135deg, rgba(125,211,252,.12), rgba(167,139,250,.10)),
+        rgba(15,25,48,.65);
+    }
+    .ctaBanner h2{ margin:0 0 8px 0; }
+    .ctaBanner p{ margin:0; max-width: 75ch; }
+    @media (max-width: 900px){
+      .ctaBanner{ flex-direction:column; align-items:flex-start; }
+    }
+
+    /* FAQ */
+    details{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      padding: 14px 14px;
+    }
+    details summary{
+      cursor:pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style:none;
+    }
+    details summary::-webkit-details-marker{ display:none; }
+    details p{ margin: 10px 0 0 0; }
+
+    /* Forms */
+    form{
+      display:grid;
+      gap:10px;
+    }
+    label{ font-size:13px; color: var(--muted); }
+    input, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{ min-height: 110px; resize: vertical; }
+    .small{ font-size: 12px; color: var(--muted); }
+
+    /* Footer */
+    footer{
+      border-top: 1px solid var(--line);
+      padding: 30px 0 44px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footerGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+    }
+    @media (max-width: 900px){
+      .footerGrid{ grid-template-columns: 1fr; }
+    }
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:10px;
+      margin-top:14px;
+    }
+    .kpi .k{
+      padding:12px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .k .n{ font-weight:800; color: var(--text); }
+    .k .t{ font-size:12px; color: var(--muted); margin-top:2px; }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="topbar">
+    <div class="wrap">
+      <div><strong>Call Today</strong> <span class="pill">Appointments Beyond Office Hours Available</span></div>
+      <div>
+        <a class="btn primary" href="tel:2069196886" aria-label="Call 206-919-6886">Call 206-919-6886</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <div class="name">Marci Metzger – The Ridge Realty Group</div>
+        <div class="tag">Hard-working, consultative guidance for buyers, sellers, and investors</div>
+      </div>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <a class="btn" href="#services">View Services</a>
+        <a class="btn primary" href="tel:2069196886">Call to Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section>
+    <div class="wrap">
+      <div class="hero">
+        <!-- Rule: H1 is the only header allowed to include keyword + city/state -->
+        <h1>Choose a Proven Pahrump Realtor in Pahrump, Nevada</h1>
+        <p>
+          Buying or selling here is not just paperwork, it is timing, pricing, and preparation.
+          We guide you through each decision with local insight, strong negotiation, and a plan built around your goals.
+        </p>
+        <div class="ctaRow">
+          <a class="btn primary" href="tel:2069196886">Call to Get Started</a>
+          <a class="btn" href="#contact">Request a Consultation</a>
+        </div>
+        <div class="mini">
+          We live, work, and play in this community, and we keep improving our process to serve Pahrump homeowners and investors well.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANY INFO + QUICK CONTACT -->
+  <section>
+    <div class="wrap">
+      <div class="grid two">
+        <div class="card">
+          <h2>Local Leadership Backed by Real Results</h2>
+          <p class="quote">
+            Decades of experience, deep local roots, and a focused approach to delivering results for buyers and sellers.
+          </p>
+          <p>
+            Marci Metzger – The Ridge Realty Group serves clients across Pahrump, Nevada with a consultative approach to residential and commercial real estate sales.
+            As your Pahrump Realtor, we bring nearly 30 years of real estate experience, plus a track record that stands out.
+            Our team has ranked Top Residential Sales for the last five years, and in 2021 we helped nearly 90 clients and closed $28.5 million in sales.
+          </p>
+          <p>
+            When a listing needs top exposure, we do not rely on a single channel.
+            We focus on exhausting every avenue to ensure listings reach every possible buyer to support top dollar outcomes, while keeping you informed at every step.
+          </p>
+          <div class="ctaRow">
+            <a class="btn" href="#about">Meet Our Team</a>
+            <a class="btn primary" href="tel:2069196886">Call 206-919-6886</a>
+          </div>
+        </div>
+
+        <div class="card" id="contact">
+          <h2>Schedule Your Consultation</h2>
+          <p>
+            Complete the form to begin your real estate plan. Share your buying or selling goals, and we will follow up with clear next steps and market guidance.
+          </p>
+
+          <form id="leadForm" autocomplete="on">
+            <div>
+              <label for="name">Full Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="Best number to call" required />
+            </div>
+            <div>
+              <label for="goal">How can we help?</label>
+              <textarea id="goal" name="goal" placeholder="Buying, selling, investing, timeline, and property details"></textarea>
+            </div>
+            <button class="btn primary" type="submit">Send My Request</button>
+            <div class="small">Prefer a faster start? Call or visit: <a href="tel:2069196886">206-919-6886</a>.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="card">
+        <h2>Real Estate Guidance That Delivers</h2>
+        <p>
+          Focused services designed to support buyers, sellers, and investors through every stage of the real estate process.
+        </p>
+
+        <div class="services" aria-label="Service cards">
+          <div class="serviceCard">
+            <div class="meta">
+              <h3>Get It SOLD!</h3>
+              <span class="badge">Seller-Focused</span>
+            </div>
+            <p>
+              Drive strategic home-selling results with tailored marketing that attracts qualified buyers and supports strong pricing outcomes.
+              Let’s build your listing plan today.
+            </p>
+            <div class="linkRow">
+              <a class="link" href="/get-it-sold/">View Details <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <div class="serviceCard">
+            <div class="meta">
+              <h3>Guide to Buyers</h3>
+              <span class="badge">Buyer Support</span>
+            </div>
+            <p>
+              Navigate informed buying decisions with market analysis, upgrades lists, and access to a reliable network of contractors.
+              Start your search with clarity.
+            </p>
+            <div class="linkRow">
+              <a class="link" href="/guide-to-buyers/">View Details <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <div class="serviceCard">
+            <div class="meta">
+              <h3>Commercial & Residential</h3>
+              <span class="badge">All Property Types</span>
+            </div>
+            <p>
+              Manage opportunities of every size, from condos to luxury homes and fixer-uppers, plus commercial and investment properties.
+              Move forward with a plan.
+            </p>
+            <div class="linkRow">
+              <a class="link" href="/commercial-residential/">View Details <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <div class="serviceCard">
+            <div class="meta">
+              <h3>Rely on Expertise</h3>
+              <span class="badge">Financing Guidance</span>
+            </div>
+            <p>
+              Strengthen purchasing power through affordability guidance and introductions to trusted credit and loan professionals.
+              Let’s map out your next steps.
+            </p>
+            <div class="linkRow">
+              <a class="link" href="/rely-on-expertise/">View Details <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px" class="ctaRow">
+          <a class="btn primary" href="tel:2069196886">Call to Discuss Your Goals</a>
+          <a class="btn" href="#about">Learn About Our Approach</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="grid two">
+        <div class="card">
+          <h2>Consultative Support Built for Real Decisions</h2>
+          <p>
+            We treat every transaction like a plan, not a guess.
+            We use market analysis to support pricing and timing, create practical upgrades lists, and help you understand options that can improve outcomes.
+          </p>
+
+          <div class="kpi" aria-label="Performance highlights">
+            <div class="k">
+              <div class="n">~30 Years</div>
+              <div class="t">Real estate experience</div>
+            </div>
+            <div class="k">
+              <div class="n">Top Sales</div>
+              <div class="t">Ranked for 5 years</div>
+            </div>
+            <div class="k">
+              <div class="n">$28.5M</div>
+              <div class="t">Closed in 2021</div>
+            </div>
+          </div>
+
+          <p style="margin-top:14px">
+            Marci Metzger – The Ridge Realty Group is local-focused by design.
+            We prioritize communication, preparation, and flexible appointment times, including scheduling beyond office hours by request.
+          </p>
+
+          <p class="small">
+            Target customers we serve: buyers, sellers, luxury home shoppers, and clients pursuing commercial and investment properties.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Start Your Real Estate Plan Today</h2>
+          <p>
+            Schedule a call or visit to discuss your buying or selling goals. Flexible appointment times are available to fit your schedule and keep your plans moving forward.
+          </p>
+          <div class="ctaRow">
+            <a class="btn primary" href="tel:2069196886">Call Now</a>
+            <a class="btn" href="#contact">Request a Consultation</a>
+          </div>
+
+          <div style="margin-top:18px">
+            <h3>Trusted Industry Affiliations</h3>
+            <p class="small">Recognized for performance, professionalism, and continued growth.</p>
+            <div class="ctaRow">
+              <span class="pill">Sales Recognition</span>
+              <span class="pill">Local Market Knowledge</span>
+              <span class="pill">Buyer and Seller Guidance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faqs">
+    <div class="wrap">
+      <div class="card">
+        <h2>Frequently Asked Questions</h2>
+        <p>
+          We share clear, reliable answers to common real estate questions. Marci Metzger – The Ridge Realty Group is a dependable source for guidance on buying, selling, and investing in the local market.
+        </p>
+
+        <div class="grid" style="gap:12px;">
+          <details>
+            <summary>How do you help a home stand out to buyers?</summary>
+            <p>
+              We start with pricing and positioning, then use targeted exposure across multiple channels.
+              We also provide an upgrades list so your home shows well and competes for stronger offers.
+            </p>
+          </details>
+
+          <details>
+            <summary>Do you handle both residential and commercial properties?</summary>
+            <p>
+              Yes. We support residential, commercial, and investment property goals, including condos, fixer-uppers, and luxury homes.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can you help buyers understand loan and credit options?</summary>
+            <p>
+              Yes. We connect clients with financial professionals who can clarify affordability, credit considerations, and loan paths that fit the purchase plan.
+            </p>
+          </details>
+
+          <details>
+            <summary>What makes your team different in the local market?</summary>
+            <p>
+              We combine deep local roots with disciplined process and proven results, including Top Residential Sales rankings for five years and strong yearly closings.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I schedule outside normal office hours?</summary>
+            <p>
+              Yes. Appointments beyond office hours are available upon request, so you can plan around work, travel, or family schedules.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section>
+    <div class="wrap">
+      <div class="card">
+        <h2>What Clients Say About Working With Us</h2>
+        <p class="small">
+          Add testimonials here. Place emphasis on communication, strong guidance, and outcomes for buyers and sellers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section>
+    <div class="wrap">
+      <div class="ctaBanner">
+        <div>
+          <h2>Take the Next Step With Confidence</h2>
+          <p>
+            When you need a Pahrump Realtor who understands the local market and prioritizes informed decisions, we are ready to help across Pahrump, Nevada.
+            Marci Metzger – The Ridge Realty Group will guide your next move with preparation and clear communication.
+          </p>
+        </div>
+        <div class="ctaRow">
+          <a class="btn primary" href="tel:2069196886" style="margin-bottom: 10px;">Call to Plan Your Next Move</a>
+          <a class="btn" href="#contact">Request a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footerGrid">
+      <div>
+        <div class="brand" style="gap:6px;">
+          <div class="name">Marci Metzger – The Ridge Realty Group</div>
+          <div class="tag">Serving buyers, sellers, and investors in Pahrump, Nevada</div>
+        </div>
+        <p style="margin-top:10px;">
+          Looking for a Pahrump Realtor with a local-focused, consultative process?
+          We serve Pahrump, Nevada with guidance for residential, commercial, and investment property goals.
+        </p>
+        <div class="ctaRow">
+          <a class="btn primary" href="tel:2069196886">Call 206-919-6886</a>
+          <a class="btn" href="#contact">Send My Request</a>
+        </div>
+        <div class="small" style="margin-top:10px;">
+          Areas We Serve: Pahrump and surrounding communities. Ask about coverage for your neighborhood and property type.
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="background: rgba(255,255,255,.02); box-shadow:none;">
+          <h3>Areas We Serve</h3>
+          <p>
+            We serve Pahrump and surrounding areas with local insight and proven strategies buyers and sellers rely on.
+          </p>
+          <p class="small">
+            Form prompt: Let us know where you are buying or selling near Pahrump, Nevada, and we will respond with market guidance tailored to your area.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="small" style="margin-top:18px;">
+      © <span id="year"></span> Marci Metzger – The Ridge Realty Group. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Smooth scrolling for internal nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener("click", (e) => {
+      const id = a.getAttribute("href");
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  // Lightweight form handling (demo)
+  const form = document.getElementById("leadForm");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    if (!name || !phone) {
+      alert("Please add your name and phone number so we can follow up.");
+      return;
+    }
+    alert("Thanks! Your request has been received. We will follow up soon.");
+    form.reset();
+  });
+</script>
+</body>
+</html>
