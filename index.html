@@ -8,343 +8,566 @@
   <title>Pahrump Realtor | Residential & Investment Real Estate Guidance</title>
   <meta name="description" content="Discover a trusted, results-driven Pahrump Realtor in Pahrump, Nevada for buyers and sellers. Call 206-919-6886 to call or visit." />
 
+  <!-- Brand fonts used on the source site (Cinzel + Source Sans Pro) -->
+  <link rel="preconnect" href="https://img1.wsimg.com" crossorigin>
+  <link rel="stylesheet" href="https://img1.wsimg.com/gfonts/s/cinzel/v26/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnfY3lDQ.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    @font-face{
+      font-family:"Cinzel";
+      font-style:normal;
+      font-weight:400;
+      font-display:swap;
+      src:url(https://img1.wsimg.com/gfonts/s/cinzel/v26/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnfY3lDQ.woff2) format("woff2");
+    }
+    @font-face{
+      font-family:"Source Sans Pro";
+      font-style:normal;
+      font-weight:400;
+      font-display:swap;
+      src:url(https://img1.wsimg.com/gfonts/s/sourcesanspro/v23/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2) format("woff2");
+    }
+    @font-face{
+      font-family:"Source Sans Pro";
+      font-style:normal;
+      font-weight:700;
+      font-display:swap;
+      src:url(https://img1.wsimg.com/gfonts/s/sourcesanspro/v23/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu.woff2) format("woff2");
+    }
+
     :root{
-      --bg:#0b1220;
-      --panel:#111a2d;
-      --card:#0f1930;
-      --text:#e9eefc;
-      --muted:#b7c2e6;
-      --line:rgba(255,255,255,.10);
-      --accent:#7dd3fc;
-      --accent2:#a78bfa;
-      --btn:#1f2c4f;
-      --btnHover:#263661;
-      --shadow: 0 12px 30px rgba(0,0,0,.25);
-      --radius: 18px;
+      /* Palette aligned to the source site */
+      --ink:#161616;              /* source site dark charcoal */
+      --ink2:#1f1f1f;
+      --paper:#ffffff;            /* source site theme color */
+      --paper2:#f6f6f6;           /* source site light gray */
+      --muted:#5a5a5a;
+      --line:rgba(22,22,22,.12);
+
+      --brand:#8f6e6e;            /* source site taupe */
+      --brand2:#826c6c;
+
+      --radius:18px;
+      --radiusSm:14px;
+      --shadow: 0 16px 40px rgba(22,22,22,.12);
+      --shadowSoft: 0 10px 26px rgba(22,22,22,.08);
+
       --max: 1120px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+
+      /* Balanced whitespace scale */
+      --s1: 8px;
+      --s2: 12px;
+      --s3: 16px;
+      --s4: 20px;
+      --s5: 28px;
+      --s6: 36px;
+      --s7: 52px;
+      --s8: 72px;
+
+      --display: "Cinzel", Georgia, serif;
+      --body: "Source Sans Pro", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      --focus: 0 0 0 4px rgba(143,110,110,.20), 0 0 0 1px rgba(143,110,110,.55);
     }
 
     *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      font-family:var(--font);
-      background:
-        radial-gradient(900px 500px at 10% 0%, rgba(125,211,252,.20), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(167,139,250,.20), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.5;
+      font-family:var(--body);
+      color:var(--ink);
+      background: var(--paper);
+      line-height:1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
     a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:var(--max); margin:0 auto; padding:0 20px; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 22px; }
+
+    /* Accessibility */
+    .skipLink{
+      position:absolute;
+      left:16px; top:10px;
+      transform: translateY(-200%);
+      padding:10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: var(--shadowSoft);
+      z-index: 999;
+    }
+    .skipLink:focus{ transform: translateY(0); outline:none; box-shadow: var(--focus); }
 
     /* Header */
     header{
       position:sticky;
       top:0;
       z-index:50;
-      background: rgba(11,18,32,.75);
+      background: rgba(255,255,255,.88);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
     .topbar{
-      border-bottom: 1px solid var(--line);
       font-size: 13px;
       color: var(--muted);
+      border-bottom: 1px solid rgba(22,22,22,.08);
     }
     .topbar .wrap{
       display:flex;
-      gap:12px;
       align-items:center;
       justify-content:space-between;
-      padding:10px 20px;
+      gap: var(--s3);
+      padding: 10px 22px;
     }
-    .topbar strong{ color: var(--text); font-weight:600; }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:6px 12px;
+      border-radius:999px;
+      border:1px solid rgba(22,22,22,.10);
+      background: rgba(246,246,246,.9);
+      white-space:nowrap;
+    }
+    .pill .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(143,110,110,.14);
+    }
 
-    .nav{
+    .navRow{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:14px;
-      padding:14px 0;
+      gap: var(--s5);
+      padding: 14px 0;
     }
     .brand{
       display:flex;
       flex-direction:column;
-      gap:2px;
+      gap:4px;
+      min-width: 240px;
     }
-    .brand .name{ font-weight:700; letter-spacing:.2px; }
-    .brand .tag{ font-size:13px; color:var(--muted); }
+    .brand .name{
+      font-family: var(--display);
+      font-weight: 400;
+      letter-spacing: .4px;
+    }
+    .brand .tag{
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 48ch;
+    }
 
     nav ul{
       list-style:none;
-      padding:0;
       margin:0;
+      padding:0;
       display:flex;
-      gap:14px;
+      gap: 6px;
       align-items:center;
+      justify-content:center;
       flex-wrap:wrap;
     }
     nav a{
-      font-size:14px;
-      color:var(--muted);
-      padding:10px 10px;
-      border-radius:12px;
+      font-size: 14px;
+      color: rgba(22,22,22,.78);
+      padding: 10px 12px;
+      border-radius: 12px;
+      transition: background .12s ease, color .12s ease;
     }
-    nav a:hover{ background: rgba(255,255,255,.06); color:var(--text); }
+    nav a:hover{
+      background: rgba(143,110,110,.10);
+      color: var(--ink);
+    }
+    nav a:focus-visible{ outline:none; box-shadow: var(--focus); }
 
     .actions{
       display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border: 1px solid rgba(22,22,22,.14);
+      background: var(--paper);
+      color: var(--ink);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      background: rgba(246,246,246,1);
+      transform: translateY(-1px);
+      border-color: rgba(22,22,22,.18);
+    }
+    .btn:focus-visible{ outline:none; box-shadow: var(--focus); }
+    .btn.primary{
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    .btn.primary:hover{
+      background: var(--ink2);
+      border-color: var(--ink2);
+    }
+
+    /* Mobile nav */
+    .menuBtn{ display:none; }
+    .mobileNav{
+      display:none;
+      border-top: 1px solid rgba(22,22,22,.08);
+      padding: 10px 0 14px 0;
+    }
+    .mobileNav a{
+      display:block;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: rgba(22,22,22,.78);
+    }
+    .mobileNav a:hover{ background: rgba(143,110,110,.10); color: var(--ink); }
+    @media (max-width: 920px){
+      nav{ display:none; }
+      .menuBtn{ display:inline-flex; }
+      .brand{ min-width: 0; }
+      .brand .tag{ display:none; }
+    }
+
+    /* Sections (balanced vertical rhythm) */
+    section{ padding: var(--s8) 0; }
+    @media (max-width: 920px){
+      section{ padding: var(--s7) 0; }
+    }
+
+    /* Layout */
+    .grid{ display:grid; gap: var(--s6); }
+    .grid.two{ grid-template-columns: 1.2fr .8fr; align-items:start; }
+    @media (max-width: 920px){ .grid.two{ grid-template-columns: 1fr; } }
+
+    /* Cards */
+    .card{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadowSoft);
+      padding: clamp(18px, 2.2vw, 28px);
+    }
+    .card.soft{
+      background: var(--paper2);
+      box-shadow: none;
+    }
+
+    /* Typography (more breathable) */
+    h1,h2,h3{ margin:0; }
+    h1{
+      font-family: var(--display);
+      font-weight: 400;
+      letter-spacing: .6px;
+      font-size: clamp(30px, 3.2vw, 46px);
+      line-height: 1.12;
+      max-width: 18ch;
+    }
+    h2{
+      font-family: var(--display);
+      font-weight: 400;
+      letter-spacing: .4px;
+      font-size: 24px;
+      line-height: 1.25;
+      margin-bottom: var(--s3);
+    }
+    h3{
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.25;
+      margin-bottom: var(--s2);
+    }
+    p{
+      margin: 0 0 var(--s3) 0;
+      color: rgba(22,22,22,.78);
+      font-size: 16px;
+      max-width: 72ch;
+    }
+    .small{ font-size: 13px; color: rgba(22,22,22,.64); }
+    .quote{
+      margin: var(--s4) 0 var(--s4) 0;
+      padding: var(--s4);
+      border-left: 4px solid var(--brand);
+      background: rgba(143,110,110,.08);
+      border-radius: var(--radiusSm);
+      color: rgba(22,22,22,.88);
+      font-weight: 700;
+      max-width: 78ch;
+    }
+
+    /* HERO (more whitespace + strong image placement) */
+    .heroShell{
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background: var(--paper);
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: var(--s6);
+      padding: clamp(20px, 3vw, 40px);
+      align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .heroGrid{ grid-template-columns: 1fr; }
+    }
+
+    .heroCopy p{
+      font-size: 17px;
+      margin-top: var(--s4);
+      margin-bottom: var(--s5);
+      max-width: 62ch;
+    }
+    .ctaRow{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top: var(--s2);
+    }
+    .mini{
+      margin-top: var(--s4);
+      color: rgba(22,22,22,.66);
+      font-size: 13.5px;
+      max-width: 72ch;
+    }
+
+    .heroMedia{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid rgba(22,22,22,.12);
+      background: var(--paper2);
+      position:relative;
+      min-height: 360px;
+    }
+    .heroMedia img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .heroMedia .overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(22,22,22,.08), rgba(22,22,22,.48));
+      pointer-events:none;
+    }
+    .heroMedia .badgeBox{
+      position:absolute;
+      left: 18px;
+      bottom: 18px;
+      right: 18px;
+      display:flex;
+      flex-wrap:wrap;
       gap:10px;
       align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
     }
-    .btn{
-      border: 1px solid var(--line);
-      background: var(--btn);
-      color: var(--text);
-      padding: 10px 14px;
-      border-radius: 14px;
-      font-weight:600;
-      font-size:14px;
+    .heroTag{
       display:inline-flex;
       align-items:center;
       gap:10px;
-      box-shadow: none;
-      cursor:pointer;
-      transition: transform .12s ease, background .12s ease;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(22,22,22,.46);
+      color: rgba(255,255,255,.92);
+      font-weight: 700;
+      font-size: 13px;
+      backdrop-filter: blur(8px);
     }
-    .btn:hover{ background: var(--btnHover); transform: translateY(-1px); }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(125,211,252,.22), rgba(167,139,250,.18));
-      border-color: rgba(125,211,252,.35);
-    }
-    .btn.primary:hover{ border-color: rgba(167,139,250,.45); }
-    .pill{
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      color:var(--muted);
-      background: rgba(255,255,255,.04);
+    .heroTag .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(143,110,110,.22);
     }
 
-    /* Sections */
-    section{ padding: 56px 0; }
-    .panel{
-      background: rgba(17,26,45,.55);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .grid{
-      display:grid;
-      gap:18px;
-    }
-    .grid.two{
-      grid-template-columns: 1.2fr .8fr;
-    }
-    @media (max-width: 900px){
-      .grid.two{ grid-template-columns: 1fr; }
-      nav ul{ display:none; }
-    }
-
-    .hero{
-      padding: 34px 28px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(1000px 500px at 20% 0%, rgba(125,211,252,.20), transparent 55%),
-        radial-gradient(900px 450px at 90% 10%, rgba(167,139,250,.18), transparent 55%),
-        rgba(17,26,45,.55);
-      box-shadow: var(--shadow);
-    }
-    .hero h1{
-      margin: 0 0 10px 0;
-      font-size: clamp(26px, 3.2vw, 42px);
-      line-height:1.12;
-      letter-spacing: .2px;
-    }
-    .hero p{
-      margin:0 0 18px 0;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 70ch;
-    }
-    .hero .ctaRow{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
-    .mini{
-      color: var(--muted);
-      font-size:13px;
-      margin-top:12px;
-    }
-
-    .card{
-      padding: 22px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: rgba(15,25,48,.65);
-    }
-    h2{
-      margin:0 0 10px 0;
-      font-size: 22px;
-      letter-spacing:.2px;
-    }
-    h3{
-      margin:0 0 8px 0;
-      font-size: 16px;
-      letter-spacing:.2px;
-    }
-    p{ margin:0 0 14px 0; color: var(--muted); }
-    .quote{
-      padding: 14px 16px;
-      border-left: 3px solid rgba(125,211,252,.55);
-      background: rgba(255,255,255,.04);
-      border-radius: 12px;
-      color: var(--text);
-      font-weight: 600;
-      margin: 10px 0 14px 0;
-    }
-
+    /* Services (more breathing room) */
     .services{
       display:grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+      gap: var(--s5);
+      margin-top: var(--s5);
     }
-    @media (max-width: 900px){
-      .services{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 920px){ .services{ grid-template-columns: 1fr; } }
+
     .serviceCard{
-      padding:18px;
-      border-radius: 16px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadowSoft);
+      padding: var(--s5);
       display:flex;
       flex-direction:column;
-      gap:10px;
-      min-height: 160px;
+      gap: var(--s3);
+      min-height: 190px;
     }
     .serviceCard .meta{
       display:flex;
-      gap:10px;
-      align-items:center;
+      align-items:flex-start;
       justify-content:space-between;
+      gap: var(--s3);
     }
-    .serviceCard .meta .badge{
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(125,211,252,.25);
-      color: rgba(125,211,252,.95);
-      background: rgba(125,211,252,.08);
+    .serviceCard p{
+      margin:0;
+      max-width: 64ch;
     }
-    .serviceCard p{ margin:0; }
-    .serviceCard .linkRow{ margin-top:auto; }
+    .badge{
+      font-size: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(143,110,110,.30);
+      background: rgba(143,110,110,.10);
+      color: rgba(22,22,22,.82);
+      white-space:nowrap;
+    }
+    .linkRow{ margin-top:auto; }
     .link{
       display:inline-flex;
       align-items:center;
-      gap:8px;
-      color: var(--text);
+      gap:10px;
       font-weight: 700;
+      color: var(--ink);
       padding: 10px 12px;
       border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(22,22,22,.14);
+      background: var(--paper2);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
     }
-    .link:hover{ background: rgba(255,255,255,.07); }
+    .link:hover{
+      transform: translateY(-1px);
+      background: rgba(143,110,110,.10);
+      border-color: rgba(143,110,110,.30);
+    }
+    .link:focus-visible{ outline:none; box-shadow: var(--focus); }
 
-    .ctaBanner{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      justify-content:space-between;
-      padding: 22px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(125,211,252,.20);
-      background:
-        linear-gradient(135deg, rgba(125,211,252,.12), rgba(167,139,250,.10)),
-        rgba(15,25,48,.65);
+    /* KPI */
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--s3);
+      margin: var(--s5) 0 var(--s3) 0;
     }
-    .ctaBanner h2{ margin:0 0 8px 0; }
-    .ctaBanner p{ margin:0; max-width: 75ch; }
-    @media (max-width: 900px){
-      .ctaBanner{ flex-direction:column; align-items:flex-start; }
+    .k{
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--paper2);
+      padding: var(--s4);
     }
+    .k .n{ font-weight: 700; font-size: 16px; color: var(--ink); }
+    .k .t{ margin-top: 4px; font-size: 12.5px; color: rgba(22,22,22,.64); }
 
     /* FAQ */
     details{
       border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(255,255,255,.03);
-      padding: 14px 14px;
+      border-radius: 16px;
+      background: var(--paper);
+      box-shadow: var(--shadowSoft);
+      padding: 16px 16px;
     }
+    details + details{ margin-top: var(--s3); }
     details summary{
       cursor:pointer;
       font-weight: 700;
-      color: var(--text);
+      color: var(--ink);
       list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
     }
     details summary::-webkit-details-marker{ display:none; }
-    details p{ margin: 10px 0 0 0; }
+    details summary .chev{ transition: transform .15s ease; color: rgba(22,22,22,.64); }
+    details[open] summary .chev{ transform: rotate(180deg); }
+    details p{ margin: 10px 0 0 0; max-width: 78ch; }
 
-    /* Forms */
+    /* Form */
     form{
       display:grid;
-      gap:10px;
+      gap: var(--s3);
+      margin-top: var(--s4);
     }
-    label{ font-size:13px; color: var(--muted); }
+    label{ font-size: 13px; color: rgba(22,22,22,.70); }
     input, textarea{
       width:100%;
       padding: 12px 12px;
       border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
+      border: 1px solid rgba(22,22,22,.16);
+      background: var(--paper);
+      color: var(--ink);
       outline:none;
     }
-    textarea{ min-height: 110px; resize: vertical; }
-    .small{ font-size: 12px; color: var(--muted); }
+    input:focus, textarea:focus{ box-shadow: var(--focus); border-color: rgba(143,110,110,.45); }
+    textarea{ min-height: 130px; resize: vertical; }
+
+    /* CTA banner */
+    .ctaBanner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: var(--s6);
+      padding: clamp(20px, 2.5vw, 34px);
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid rgba(143,110,110,.25);
+      background:
+        linear-gradient(180deg, rgba(143,110,110,.10), rgba(246,246,246,1));
+      box-shadow: var(--shadowSoft);
+    }
+    .ctaBanner p{ margin:0; max-width: 80ch; }
+    @media (max-width: 920px){
+      .ctaBanner{ flex-direction:column; align-items:flex-start; }
+    }
 
     /* Footer */
     footer{
-      border-top: 1px solid var(--line);
-      padding: 30px 0 44px 0;
-      color: var(--muted);
-      font-size: 14px;
+      border-top: 1px solid rgba(22,22,22,.10);
+      background: var(--paper2);
+      padding: var(--s7) 0;
     }
     .footerGrid{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
-      gap:18px;
+      gap: var(--s6);
     }
-    @media (max-width: 900px){
-      .footerGrid{ grid-template-columns: 1fr; }
-    }
-    .kpi{
+    @media (max-width: 920px){ .footerGrid{ grid-template-columns: 1fr; } }
+
+    /* Minimal inline-friendly gallery styles (no global CSS changes) */
+    .gallery-grid{
       display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap:10px;
-      margin-top:14px;
+      grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+      gap:14px;
+      margin-top:18px;
     }
-    .kpi .k{
-      padding:12px;
-      border-radius: 14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
+    .gallery-grid img{
+      width:100%; height:140px; object-fit:cover; border-radius:12px; border:1px solid var(--line);
+      display:block;
     }
-    .k .n{ font-weight:800; color: var(--text); }
-    .k .t{ font-size:12px; color: var(--muted); margin-top:2px; }
+
   </style>
 </head>
 
 <body>
+<a class="skipLink" href="#main">Skip to content</a>
+
 <header>
   <div class="topbar">
     <div class="wrap">
-      <div><strong>Call Today</strong> <span class="pill">Appointments Beyond Office Hours Available</span></div>
+      <div>
+        <strong>Call Today</strong>
+        <span class="pill"><span class="dot" aria-hidden="true"></span>Appointments Beyond Office Hours Available</span>
+      </div>
       <div>
         <a class="btn primary" href="tel:2069196886" aria-label="Call 206-919-6886">Call 206-919-6886</a>
       </div>
@@ -352,10 +575,10 @@
   </div>
 
   <div class="wrap">
-    <div class="nav">
+    <div class="navRow">
       <div class="brand">
         <div class="name">Marci Metzger – The Ridge Realty Group</div>
-        <div class="tag">Hard-working, consultative guidance for buyers, sellers, and investors</div>
+        <div class="tag">Consultative guidance for buyers, sellers, and investors</div>
       </div>
 
       <nav aria-label="Primary">
@@ -368,30 +591,58 @@
       </nav>
 
       <div class="actions">
+        <button class="btn menuBtn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNav">Menu</button>
         <a class="btn" href="#services">View Services</a>
         <a class="btn primary" href="tel:2069196886">Call to Get Started</a>
       </div>
     </div>
+
+    <div class="mobileNav" id="mobileNav" aria-label="Mobile">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#faqs">FAQs</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </header>
 
-<main>
+<main id="main">
   <!-- HERO -->
   <section>
     <div class="wrap">
-      <div class="hero">
-        <!-- Rule: H1 is the only header allowed to include keyword + city/state -->
-        <h1>Choose a Proven Pahrump Realtor in Pahrump, Nevada</h1>
-        <p>
-          Buying or selling here is not just paperwork, it is timing, pricing, and preparation.
-          We guide you through each decision with local insight, strong negotiation, and a plan built around your goals.
-        </p>
-        <div class="ctaRow">
-          <a class="btn primary" href="tel:2069196886">Call to Get Started</a>
-          <a class="btn" href="#contact">Request a Consultation</a>
-        </div>
-        <div class="mini">
-          We live, work, and play in this community, and we keep improving our process to serve Pahrump homeowners and investors well.
+      <div class="heroShell">
+        <div class="heroGrid">
+          <div class="heroCopy">
+            <!-- Rule: H1 is the only header allowed to include keyword + city/state -->
+            <h1>Choose a Proven Pahrump Realtor in Pahrump, Nevada</h1>
+            <p>
+              Buying or selling here is timing, pricing, and preparation.
+              We guide you through each decision with local insight, strong negotiation, and a plan built around your goals.
+            </p>
+            <div class="ctaRow">
+              <a class="btn primary" href="tel:2069196886">Call to Get Started</a>
+              <a class="btn" href="#contact">Request a Consultation</a>
+            </div>
+            <div class="mini">
+              We live, work, and play in this community, and we keep improving our process to serve Pahrump homeowners and investors well.
+            </div>
+          </div>
+
+          <div class="heroMedia" aria-label="Featured local image">
+            <!-- Image sourced from the referenced site -->
+            <img
+              src="https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/mtn%20falls%20pond.jpg"
+              alt="Scenic view representing Pahrump and the local community"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            />
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="badgeBox" aria-hidden="true">
+              <span class="heroTag"><span class="dot"></span>Local Insight</span>
+              <span class="heroTag"><span class="dot"></span>Strong Negotiation</span>
+              <span class="heroTag"><span class="dot"></span>Clear Next Steps</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -459,6 +710,8 @@
 
         <div class="services" aria-label="Service cards">
           <div class="serviceCard">
+            <!-- Added image (kept inline styles to avoid modifying existing stylesheet) -->
+            <img src="https://img1.wsimg.com/isteam/stock/3395/:/rs=w:600,h:300,cg:true" alt="Staged home ready to sell" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:12px;border:1px solid rgba(22,22,22,.08)">
             <div class="meta">
               <h3>Get It SOLD!</h3>
               <span class="badge">Seller-Focused</span>
@@ -473,6 +726,7 @@
           </div>
 
           <div class="serviceCard">
+            <img src="https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/photo-5db79f9.jpg/:/rs=w:365,h:365,cg:true" alt="Agent support for buyers" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:12px;border:1px solid rgba(22,22,22,.08)">
             <div class="meta">
               <h3>Guide to Buyers</h3>
               <span class="badge">Buyer Support</span>
@@ -487,6 +741,7 @@
           </div>
 
           <div class="serviceCard">
+            <img src="https://img1.wsimg.com/isteam/stock/107927/:/rs=w:600,h:300,cg:true" alt="Commercial and residential portfolio" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:12px;border:1px solid rgba(22,22,22,.08)">
             <div class="meta">
               <h3>Commercial & Residential</h3>
               <span class="badge">All Property Types</span>
@@ -501,6 +756,7 @@
           </div>
 
           <div class="serviceCard">
+            <img src="https://img1.wsimg.com/isteam/stock/43920/:/rs=w:365,h:365,cg:true" alt="Financial guidance" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:12px;border:1px solid rgba(22,22,22,.08)">
             <div class="meta">
               <h3>Rely on Expertise</h3>
               <span class="badge">Financing Guidance</span>
@@ -515,7 +771,7 @@
           </div>
         </div>
 
-        <div style="margin-top:18px" class="ctaRow">
+        <div style="margin-top:28px" class="ctaRow">
           <a class="btn primary" href="tel:2069196886">Call to Discuss Your Goals</a>
           <a class="btn" href="#about">Learn About Our Approach</a>
         </div>
@@ -549,7 +805,7 @@
             </div>
           </div>
 
-          <p style="margin-top:14px">
+          <p>
             Marci Metzger – The Ridge Realty Group is local-focused by design.
             We prioritize communication, preparation, and flexible appointment times, including scheduling beyond office hours by request.
           </p>
@@ -559,7 +815,7 @@
           </p>
         </div>
 
-        <div class="card">
+        <div class="card soft">
           <h2>Start Your Real Estate Plan Today</h2>
           <p>
             Schedule a call or visit to discuss your buying or selling goals. Flexible appointment times are available to fit your schedule and keep your plans moving forward.
@@ -569,15 +825,34 @@
             <a class="btn" href="#contact">Request a Consultation</a>
           </div>
 
-          <div style="margin-top:18px">
+          <div style="margin-top:28px">
             <h3>Trusted Industry Affiliations</h3>
             <p class="small">Recognized for performance, professionalism, and continued growth.</p>
             <div class="ctaRow">
-              <span class="pill">Sales Recognition</span>
-              <span class="pill">Local Market Knowledge</span>
-              <span class="pill">Buyer and Seller Guidance</span>
+              <span class="pill"><span class="dot" aria-hidden="true"></span>Sales Recognition</span>
+              <span class="pill"><span class="dot" aria-hidden="true"></span>Local Market Knowledge</span>
+              <span class="pill"><span class="dot" aria-hidden="true"></span>Buyer and Seller Guidance</span>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- MAP SECTION -->
+  <section id="map">
+    <div class="wrap">
+      <div class="card">
+        <h2>Areas we serve</h2>
+        <p class="small">Get a quick view of the Pahrump area. Use this map to orient yourself to neighborhoods and surrounding communities.</p>
+
+        <div class="map-wrap" style="margin-top:16px">
+          <!-- Embedded Google Map centered on Pahrump, NV -->
+          <iframe
+            title="Pahrump Map"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d33661.91334986663!2d-116.0390393!3d36.2079624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1630000000000!5m2!1sen!2sus"
+            width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
     </div>
@@ -592,9 +867,9 @@
           We share clear, reliable answers to common real estate questions. Marci Metzger – The Ridge Realty Group is a dependable source for guidance on buying, selling, and investing in the local market.
         </p>
 
-        <div class="grid" style="gap:12px;">
+        <div style="margin-top:20px">
           <details>
-            <summary>How do you help a home stand out to buyers?</summary>
+            <summary>How do you help a home stand out to buyers? <span class="chev" aria-hidden="true">▾</span></summary>
             <p>
               We start with pricing and positioning, then use targeted exposure across multiple channels.
               We also provide an upgrades list so your home shows well and competes for stronger offers.
@@ -602,28 +877,28 @@
           </details>
 
           <details>
-            <summary>Do you handle both residential and commercial properties?</summary>
+            <summary>Do you handle both residential and commercial properties? <span class="chev" aria-hidden="true">▾</span></summary>
             <p>
               Yes. We support residential, commercial, and investment property goals, including condos, fixer-uppers, and luxury homes.
             </p>
           </details>
 
           <details>
-            <summary>Can you help buyers understand loan and credit options?</summary>
+            <summary>Can you help buyers understand loan and credit options? <span class="chev" aria-hidden="true">▾</span></summary>
             <p>
               Yes. We connect clients with financial professionals who can clarify affordability, credit considerations, and loan paths that fit the purchase plan.
             </p>
           </details>
 
           <details>
-            <summary>What makes your team different in the local market?</summary>
+            <summary>What makes your team different in the local market? <span class="chev" aria-hidden="true">▾</span></summary>
             <p>
               We combine deep local roots with disciplined process and proven results, including Top Residential Sales rankings for five years and strong yearly closings.
             </p>
           </details>
 
           <details>
-            <summary>Can I schedule outside normal office hours?</summary>
+            <summary>Can I schedule outside normal office hours? <span class="chev" aria-hidden="true">▾</span></summary>
             <p>
               Yes. Appointments beyond office hours are available upon request, so you can plan around work, travel, or family schedules.
             </p>
@@ -636,14 +911,101 @@
   <!-- REVIEWS -->
   <section>
     <div class="wrap">
-      <div class="card">
+      <div class="card soft">
         <h2>What Clients Say About Working With Us</h2>
-        <p class="small">
-          Add testimonials here. Place emphasis on communication, strong guidance, and outcomes for buyers and sellers.
-        </p>
       </div>
     </div>
   </section>
+  
+   <!-- FIND YOUR DREAM HOME (MLS-style search) -->
+  <section id="mls" class="mls-section">
+    <div class="wrap">
+      <div class="card">
+        <h2>Find Your Dream Home</h2>
+        <p>Search listings, a fast way to begin exploring what's available around Pahrump and nearby communities.</p>
+
+        <form id="mlsForm" class="mls-form" aria-label="Find Your Dream Home form">
+          <div>
+            <label for="mls-location">Location</label>
+            <select id="mls-location" name="location">
+              <option value="">Pahrump, NV (default)</option>
+              <option value="pahrump">Pahrump</option>
+              <option value="lasvegas">Las Vegas Area</option>
+            </select>
+          </div>
+          <div>
+            <label for="mls-type">Type</label>
+            <select id="mls-type" name="type">
+              <option value="">Any</option>
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
+              <option value="condo">Condo</option>
+            </select>
+          </div>
+          <div>
+            <label for="mls-sort">Sort By</label>
+            <select id="mls-sort" name="sort">
+              <option value="newest">Newest</option>
+              <option value="pra">Price: Low → High</option>
+              <option value="prd">Price: High → Low</option>
+            </select>
+          </div>
+          <div>
+            <label for="mls-beds">Bedrooms</label>
+            <select id="mls-beds" name="beds">
+              <option value="">Any</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
+          <div>
+            <label for="mls-baths">Baths</label>
+            <select id="mls-baths" name="baths">
+              <option value="">Any</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+            </select>
+          </div>
+          <div>
+            <label for="mls-min">Min Price</label>
+            <input id="mls-min" name="min" type="text" placeholder="$" />
+          </div>
+          <div>
+            <label for="mls-max">Max Price</label>
+            <input id="mls-max" name="max" type="text" placeholder="$" />
+          </div>
+
+          <div style="grid-column: 1 / -1; display:flex; gap:12px; align-items:center;">
+            <button id="mls-search" class="btn primary" type="button">Search Now</button>
+            <div class="small">Or call us: <a href="tel:2069196886">206-919-6886</a></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY (ADDED) -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="card">
+        <h2>Photo Gallery</h2>
+        <p class="small">Selected images from our listings and the local area.</p>
+
+        <div class="gallery-grid" aria-label="Photo gallery">
+          <img src="https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/mtn%20falls%20pond.jpg" alt="Local pond and landscape" loading="lazy" data-full="https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/mtn%20falls%20pond.jpg">
+          <img src="https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/photo-5db79f9.jpg/:/rs=w:365,h:365,cg:true" alt="Agent photo" loading="lazy" data-full="https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/photo-5db79f9.jpg">
+          <img src="https://img1.wsimg.com/isteam/stock/3395/:/rs=w:600,h:300,cg:true" alt="Staged interior" loading="lazy" data-full="https://img1.wsimg.com/isteam/stock/3395/:/rs=w:1200,h:600,cg:true">
+          <img src="https://img1.wsimg.com/isteam/stock/107927/:/rs=w:600,h:300,cg:true" alt="Property exterior" loading="lazy" data-full="https://img1.wsimg.com/isteam/stock/107927/:/rs=w:1200,h:600,cg:true">
+          <img src="https://img1.wsimg.com/isteam/stock/43920/:/rs=w:365,h:365,cg:true" alt="Neighborhood view" loading="lazy" data-full="https://img1.wsimg.com/isteam/stock/43920/:/rs=w:730,h:730,cg:true">
+        </div>
+        <p class="small" style="margin-top:12px;">Click any image to open full size in a new tab.</p>
+      </div>
+    </div>
+  </section>
+  <!-- END PHOTO GALLERY -->
 
   <!-- CLOSING -->
   <section>
@@ -657,7 +1019,7 @@
           </p>
         </div>
         <div class="ctaRow">
-          <a class="btn primary" href="tel:2069196886" style="margin-bottom: 10px;">Call to Plan Your Next Move</a>
+          <a class="btn primary" href="tel:2069196886">Call to Plan Your Next Move</a>
           <a class="btn" href="#contact">Request a Consultation</a>
         </div>
       </div>
@@ -669,25 +1031,25 @@
   <div class="wrap">
     <div class="footerGrid">
       <div>
-        <div class="brand" style="gap:6px;">
+        <div class="brand" style="gap:8px;">
           <div class="name">Marci Metzger – The Ridge Realty Group</div>
           <div class="tag">Serving buyers, sellers, and investors in Pahrump, Nevada</div>
         </div>
-        <p style="margin-top:10px;">
+        <p style="margin-top:16px;">
           Looking for a Pahrump Realtor with a local-focused, consultative process?
           We serve Pahrump, Nevada with guidance for residential, commercial, and investment property goals.
         </p>
-        <div class="ctaRow">
+        <div class="ctaRow" style="margin-top:14px;">
           <a class="btn primary" href="tel:2069196886">Call 206-919-6886</a>
           <a class="btn" href="#contact">Send My Request</a>
         </div>
-        <div class="small" style="margin-top:10px;">
+        <div class="small" style="margin-top:16px;">
           Areas We Serve: Pahrump and surrounding communities. Ask about coverage for your neighborhood and property type.
         </div>
       </div>
 
       <div>
-        <div class="card" style="background: rgba(255,255,255,.02); box-shadow:none;">
+        <div class="card" style="box-shadow:none; background:rgba(255,255,255,.6);">
           <h3>Areas We Serve</h3>
           <p>
             We serve Pahrump and surrounding areas with local insight and proven strategies buyers and sellers rely on.
@@ -699,7 +1061,7 @@
       </div>
     </div>
 
-    <div class="small" style="margin-top:18px;">
+    <div class="small" style="margin-top:24px;">
       © <span id="year"></span> Marci Metzger – The Ridge Realty Group. All rights reserved.
     </div>
   </div>
@@ -709,6 +1071,17 @@
   // Year
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  // Mobile menu toggle
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileNav = document.getElementById("mobileNav");
+  if (menuBtn && mobileNav) {
+    menuBtn.addEventListener("click", () => {
+      const isOpen = mobileNav.style.display === "block";
+      mobileNav.style.display = isOpen ? "none" : "block";
+      menuBtn.setAttribute("aria-expanded", String(!isOpen));
+    });
+  }
+
   // Smooth scrolling for internal nav links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener("click", (e) => {
@@ -716,11 +1089,17 @@
       const el = document.querySelector(id);
       if (!el) return;
       e.preventDefault();
+
+      if (mobileNav && window.getComputedStyle(mobileNav).display !== "none") {
+        mobileNav.style.display = "none";
+        if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+      }
+
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 
-  // Lightweight form handling (demo)
+  // Lightweight form handling (demo) for the main lead form
   const form = document.getElementById("leadForm");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -733,6 +1112,39 @@
     alert("Thanks! Your request has been received. We will follow up soon.");
     form.reset();
   });
+
+  // ADDED: handle the new Plan form under "Start Your Real Estate Plan Today"
+  (function(){
+    const planForm = document.getElementById("planForm");
+    if (!planForm) return;
+    planForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      const pname = document.getElementById("plan-name").value.trim();
+      const pphone = document.getElementById("plan-phone").value.trim();
+      // basic required validation
+      if (!pname || !pphone) {
+        alert("Please provide your name and phone so we can start your plan.");
+        return;
+      }
+      // demo submission
+      alert("Thank you — your plan request was sent. We'll contact you shortly.");
+      planForm.reset();
+    });
+  })();
+
+  // ADDED: simple gallery thumbnail click -> open full-size image in new tab
+  (function(){
+    const galleryImgs = document.querySelectorAll('.gallery-grid img');
+    if (!galleryImgs || galleryImgs.length === 0) return;
+    galleryImgs.forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
+        const full = img.getAttribute('data-full') || img.src;
+        // open full image in new tab
+        window.open(full, '_blank', 'noopener');
+      });
+    });
+  })();
 </script>
 </body>
 </html>
